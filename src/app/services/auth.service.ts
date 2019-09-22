@@ -24,7 +24,6 @@ export class AuthService {
       public db: AngularFirestore,
       public afAuth: AngularFireAuth,
       private router: Router) {
-        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
 
       
