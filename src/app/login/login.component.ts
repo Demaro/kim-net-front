@@ -59,7 +59,9 @@ spinnerDiameter : number = 40;
         console.log(user)
 
         localStorage.setItem('currentUser', JSON.stringify(user));
-        this.authService.currentUserSubject.next(user);
+        //this.authService.currentUserSubject.value(user);
+
+        this.authService.isLogged = true;
 
         this.router.navigate(['']);
 

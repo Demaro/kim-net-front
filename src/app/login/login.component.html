@@ -8,7 +8,7 @@
           <!--Grid row-->
           <div class="row pt-lg-5 mt-lg-5">
             <!--Grid column-->
-            <div *ngIf="!authService.currentUserValue" class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft" data-wow-delay="0.3s">
+            <div *ngIf="!authService.isLogged" class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft" data-wow-delay="0.3s">
               <h1 class="display-4 font-weight-bold">kim-net</h1>
               <hr class="hr-light">
               <h6 class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga
@@ -17,7 +17,7 @@
               <a class="btn btn-outline-white">Learn more</a>
             </div>
 
-            <div *ngIf="authService.currentUserValue" class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft" data-wow-delay="0.3s">
+            <div *ngIf="authService.isLogged" class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft" data-wow-delay="0.3s">
                 <h1 class="display-4 font-weight-bold">Benvenido!</h1>
                 <hr class="hr-light">
                 <h6 class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga
@@ -30,7 +30,7 @@
 
             <div class="col-md-6 col-xl-5 mb-4">
 
-            <div *ngIf="!authService.currentUserValue">
+            <div *ngIf="!authService.isLogged">
               <div class="card wow fadeInRight" data-wow-delay="0.3s">
                 <div class="card-body z-depth-2">
                   <!--Header-->

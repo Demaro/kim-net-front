@@ -13,9 +13,13 @@ import { reject } from 'q';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+
+
+    user: any;
   
-    public currentUserSubject: BehaviorSubject<User>;
+    public currentUserSubject = new BehaviorSubject<User>(this.user);
     public currentUser: Observable<User>;
+    public currentClient = this.currentUserSubject.asObservable();
     isLogged: boolean = false;
     loading: boolean = false;
 
@@ -24,6 +28,10 @@ export class AuthService {
       public db: AngularFirestore,
       public afAuth: AngularFireAuth,
       private router: Router) {
+        //this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+        //this.currentUser = this.currentUserSubject.asObservable();
+
+      
 
       //this.items = db.list('items').valueChanges();
      }
@@ -41,8 +49,7 @@ export class AuthService {
 
     loginEmailUser(email, password){
 
-   
-
+  
       return  new Promise((resolve, reject) => {
 
         this.afAuth.auth.signInWithEmailAndPassword(email, password)
@@ -58,8 +65,15 @@ export class AuthService {
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
 
-        this.isLogged = true
+        this.isLogged = false;
         this.loading = false;
         this.router.navigate(['/login']);
     }
+
+    login(userData) {
+      this.currentUserSubject.next(userData);
+    }
+
+
+    
 }

@@ -6,8 +6,7 @@
         <a class="navbar-brand" href="#">
           <strong>kim - gas</strong>
         </a>
-              
-        <div *ngIf="auth.currentUserValue">
+        <div *ngIf="auth.isLogged">
 
             <button class="navbar-toggler" mat-button 
             [matMenuTriggerFor]="menu" 
@@ -27,7 +26,7 @@
         </div>
 
         
-        <div *ngIf="auth.currentUserValue" class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <div *ngIf="auth.isLogged" class="collapse navbar-collapse" id="navbarSupportedContent-7">
 
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
