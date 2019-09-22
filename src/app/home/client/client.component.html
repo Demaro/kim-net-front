@@ -1,0 +1,47 @@
+<section class="cards  my-5">
+
+        <!-- Section heading -->
+        <h2 class="h1-responsive font-weight-bold text-center my-5">Clientes asociados</h2>
+        <!-- Section description -->
+      
+        <!-- Grid row -->
+
+        <button (click)="openDialog()" mat-raised-button>
+                <mat-icon>person_add</mat-icon> Asociar nuevo cliente
+              </button>
+
+        <div class="row">
+
+                  <div *ngFor="let client of clientService.currentClientSubject.value" @flyInOut>
+
+                        <div class="col-lg-3 col-md-3 mb-lg-6 mb-12">
+
+                
+                    <mat-card class="cards-group " matRipple>
+
+                            <h6 class="mb-3"> <mat-icon>person</mat-icon> {{ client.fullName }}</h6>
+
+                            <h6 class="mb-3"> <mat-icon>phone</mat-icon> {{ client.phoneNumber }}</h6>
+
+                            <h6 class="mb-3"> <mat-icon>email</mat-icon> {{ client.email }}</h6>
+
+                            <h6 class="mb-3"> <mat-icon>whatshot</mat-icon> Ultima compra: {{ client.product.name }}</h6>
+
+                    </mat-card>
+                
+
+                </div>
+
+            </div>
+
+
+          
+              <!-- Grid column -->
+          
+            </div>
+
+       
+
+        
+
+        </section>

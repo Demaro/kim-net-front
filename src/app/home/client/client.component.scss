@@ -1,0 +1,38 @@
+button {
+
+    border: none;
+    outline: none;
+  }
+
+
+  
+
+
+  .name {
+    float: left;
+  }
+
+  .cards-group {
+    cursor: pointer;
+    text-align: left;
+    border-radius: 9%;
+    margin-top: 70%;
+    width: 250px;
+    height: 250px;
+    
+  }
+  .kim-gradient {
+    background: linear-gradient(-100deg,  #dd0000bf, #e0ef00d6) !important;
+    height: 100%;
+}
+
+
+  @media (min-width: 500px) and (max-width: 1000px) {
+
+    .cards-group {
+
+        margin-top: 15%;
+
+        
+      }
+    }

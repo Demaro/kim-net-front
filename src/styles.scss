@@ -1,0 +1,133 @@
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #39448c !important;
+}
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+body {
+  background-color: #f7f4ec;
+}
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header {
+    height: 1100px;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 700px;
+  }
+}
+
+.top-nav-collapse {
+  background-color: #fffd00c2 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: #fffd00c2 !important; 
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #fffd00c2 !important;
+  }
+}
+
+h6 {
+  line-height: 1.7;
+}
+
+@media screen and (orientation: portrait) {
+
+  .mt-5, .my-5 {
+    margin-top: -15rem !important;
+  }
+}
+
+
+@media (min-width: 768px) {
+
+}
+
+
+
+.cards{
+  margin-top: 6rem !important;
+}
+
+
+
+
+
+
+@media (min-width: 500px) and (max-width: 722px) {
+
+.cards{
+  margin-top: 19rem !important;
+}
+}
+
+.clients {
+font-size: 100px;
+}
+
+
+.rgba-indigo-strong, .rgba-indigo-strong:after {
+  background-color: #26271494 !important;
+}
+
+
+.mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+  background-color: #dbda1b !important;
+}
+
+
+
+.mat-focused .mat-form-field-underline .mat-form-field-ripple{
+  background-color: #dbda1b !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #dbda1b !important;
+}
+
+.navbar-dark .navbar-brand {
+  color: #bb0000ad;
+}
+
+@media (min-width: 576px) {
+
+  .col-sm-8 {
+
+    max-width: 80% !important;
+}
+
+.offset-sm-2 {
+  margin-left: 10.666667%;
+}
+
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10 !important;
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #dbda1b;
+}

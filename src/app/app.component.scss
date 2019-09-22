@@ -1,0 +1,24 @@
+.profile {
+
+    font-size: 1.75rem;
+    color: #000000cc;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+}
+
+.navbar-toggler {
+    color: #000000cc !important;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+button {
+
+    border: none;
+    outline: none;
+  }
+
+  .nav-link.active {
+    color: #000000cc !important;
+}

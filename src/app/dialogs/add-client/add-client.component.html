@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Nuevo socio</h2>
+<mat-dialog-content class="mat-typography">
+
+
+    <div class="col-md-6 col-xl-5 mb-4">
+
+        <form [formGroup]="clientForm" class="example-form">
+
+            <mat-form-field class="example-full-width">
+                <span matPrefix> <i class="fa fa-user prefix grey-text"></i> &nbsp;</span>
+                <input matInput type="tel" validateRut formatRut formControlName="rut" placeholder="Rut" required>
+                <mat-error>
+                    {{ getMesaggeErrorRut()}}
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <span matPrefix> <i class="fa fa-lock prefix grey-text"></i> &nbsp;</span>
+
+                <input matInput formControlName="name" type="text" placeholder="Nombre completo">
+            </mat-form-field>
+
+            <br>
+            <mat-form-field class="example-full-width">
+                <span matPrefix> <i class="fa fa-phone-alt prefix grey-text"></i> &nbsp;</span>
+                <span matPrefix>+56 &nbsp;</span>
+                <input matInput formControlName="phoneNumber" maxlength="9" type="text" placeholder="Numero telefono">
+            </mat-form-field>
+
+            <br>
+            <mat-form-field class="example-full-width">
+                <span matPrefix> <i class="fa fa-envelope prefix grey-text"></i> &nbsp;</span>
+                <input matInput formControlName="email" type="text" placeholder="Correo electronico">
+                <mat-error>
+                {{ getMesaggeErrorEmail()}}
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                    <mat-label>Producto vendido</mat-label>
+                    <mat-select formControlName="product">
+                      <mat-option *ngFor="let prod of products" [value]="prod">
+                        {{prod.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+        </form>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button (click)="addNewClient()" [mat-dialog-close]="true" [disabled]="!clientForm.valid">Asociar</button>
+</mat-dialog-actions>
