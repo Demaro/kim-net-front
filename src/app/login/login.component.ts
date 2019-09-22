@@ -63,7 +63,10 @@ spinnerDiameter : number = 40;
 
         this.authService.isLogged = true;
 
+
         this.router.navigate(['']);
+          
+
 
 
     })
