@@ -24,12 +24,12 @@ export class AuthService {
       public db: AngularFirestore,
       public afAuth: AngularFireAuth,
       private router: Router) {
-    
 
       //this.items = db.list('items').valueChanges();
      }
 
      private eventAuthError = new BehaviorSubject<string>("");
+     eventAuthErrors$ = this.eventAuthError.asObservable();
    
      itemValue = '';
      items: Observable<any[]>;
