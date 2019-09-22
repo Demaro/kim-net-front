@@ -3,6 +3,7 @@
   "version": "8.2.0",
   "scripts": {
     "ng": "ng",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -11,7 +12,7 @@
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run mdb-angular-free:server:production --bundleDependencies all",
-    "start": "node dist/server",
+    "start:heroku": "node dist/server",
     "postinstall": "npm run build:ssr"
   },
   "private": true,
@@ -63,10 +64,6 @@
     "tslint": "~5.15.0",
     "typescript": "~3.5.3",
     "webpack-cli": "^3.1.0"
-  },
-  "engines": {
-    "node": "10.16.0",
-    "npm": "6.9.1"
   },
   "license": "MIT"
 }
