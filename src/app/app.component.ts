@@ -19,6 +19,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
 
+    console.log('hola antes')
+  setTimeout(() => {
+
+    console.log('hola on')
+    
+  }, 10000);
+
+  console.log('hola on')
+
     this.getAssociatedClients()
 
 
