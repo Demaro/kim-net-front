@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   apiUrl: 'http://localhost:4000',
   firebase: {
-    apiKey: "nopasana!",
+    apiKey: "AIzaSyCEBym69Fwd8A0wW7SL8NG8-ThI0_Z_v3g",
     authDomain: "kim-gas.firebaseapp.com",
     databaseURL: "https://kim-gas.firebaseio.com",
     projectId: "kim-gas",
