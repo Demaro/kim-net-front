@@ -14,7 +14,7 @@ import { routes } from './app.routing'
 // Interceptors
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { HomeModule } from './home/home.module'
-import { AuthGuard } from './helpers/auth.guard.ts.service';
+import { AuthGuard } from './helpers/auth-guard.service';
 import {  LoginModule } from './login/login.module';
 import {  RegisterModule } from './register/register.module';
 import { AppMaterialModule } from './app-masterial.module';
