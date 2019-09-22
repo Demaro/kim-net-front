@@ -53,32 +53,17 @@ h6 {
 @media screen and (orientation: portrait) {
 
   .mt-5, .my-5 {
-    margin-top: -15rem !important;
+    margin-top: 5rem !important;
   }
 }
 
+@media screen and (orientation: landscape) {
 
-@media (min-width: 768px) {
-
+  .mt-5, .my-5 {
+    margin-top: 5rem !important;
+  }
 }
 
-
-
-.cards{
-  margin-top: 6rem !important;
-}
-
-
-
-
-
-
-@media (min-width: 500px) and (max-width: 722px) {
-
-.cards{
-  margin-top: 19rem !important;
-}
-}
 
 .clients {
 font-size: 100px;
