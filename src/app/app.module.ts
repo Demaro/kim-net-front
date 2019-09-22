@@ -35,7 +35,6 @@ import { ClientService } from './services/client.service';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
-    BrowserModule,
     HttpClientModule,
     HomeModule,
     LoginModule,
