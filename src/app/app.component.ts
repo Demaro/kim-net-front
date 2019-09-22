@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   title = 'mdb-angular-free';
 
 
-  constructor(private auth: AuthService, private clientService: ClientService){
+  constructor(public auth: AuthService, private clientService: ClientService){
   }
 
   ngOnInit(){
