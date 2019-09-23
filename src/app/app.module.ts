@@ -39,7 +39,7 @@ import { ClientService } from './services/client.service';
     HomeModule,
     LoginModule,
     RegisterModule,
-    RouterModule.forRoot(routes, { initialNavigation: 'enabled', useHash: true }),
+    RouterModule.forRoot(routes, {  useHash: true }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
