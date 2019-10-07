@@ -3,12 +3,18 @@
   "version": "8.2.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve kim-gas",
-    "build": "ng build kim-gas",
-    "test": "ng test kim-gas",
-    "lint": "ng lint kim-gas",
-    "e2e": "ng e2e kim-gas",
-    "postinstall": "ng build kim-gas --aot --prod"
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "compile:server": "webpack --config webpack.server.config.js --progress --colors",
+    "serve:ssr": "node dist/server",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "build:client-and-server-bundles": "ng build --prod && ng run mdb-angular-free:server:production --bundleDependencies all",
+    "start:heroku": "node dist/server",
+    "postinstall": "ng build:ssr --prod --aot"
+
   },
   "private": true,
   "dependencies": {
@@ -31,6 +37,7 @@
     "@angular/router": "~8.2.0",
     "@angular/service-worker": "~8.2.0",
     "@fortawesome/fontawesome-free": "^5.6.3",
+    "@nguniversal/express-engine": "^8.1.1",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
