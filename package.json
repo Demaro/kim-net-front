@@ -13,7 +13,7 @@
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run mdb-angular-free:server:production --bundleDependencies all",
     "start:heroku": "node dist/server",
-    "postinstall": "ng build:ssr --prod --aot"
+    "postinstall": "npm run build:ssr --prod --aot"
 
   },
   "private": true,
