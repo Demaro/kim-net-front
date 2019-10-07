@@ -25,6 +25,7 @@ import { environment } from '../environments/environment';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ClientService } from './services/client.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ClientService } from './services/client.service';
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AppMaterialModule
+    AppMaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 
     
   ],
