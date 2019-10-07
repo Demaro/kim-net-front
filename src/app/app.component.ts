@@ -11,7 +11,7 @@ import {  Client } from './models/client';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'mdb-angular-free';
+  title = 'kim-gas';
 
 
   constructor(public auth: AuthService, private clientService: ClientService){

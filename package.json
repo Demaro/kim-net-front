@@ -3,12 +3,12 @@
   "version": "8.2.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve mdb-angular-free",
-    "build": "ng build mdb-angular-free",
-    "test": "ng test mdb-angular-free",
-    "lint": "ng lint mdb-angular-free",
-    "e2e": "ng e2e mdb-angular-free",
-    "postinstall": "ng build mdb-angular-free --aot --prod"
+    "start": "ng serve kim-gas",
+    "build": "ng build kim-gas",
+    "test": "ng test kim-gas",
+    "lint": "ng lint kim-gas",
+    "e2e": "ng e2e kim-gas",
+    "postinstall": "ng build kim-gas --aot --prod"
   },
   "private": true,
   "dependencies": {
