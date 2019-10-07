@@ -32,7 +32,7 @@ import { ClientService } from './services/client.service';
     AppComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
