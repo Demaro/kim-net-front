@@ -13,6 +13,8 @@ import {  Client } from './models/client';
 export class AppComponent implements OnInit {
   title = 'kim-gas';
 
+  promptEvent;
+
 
   constructor(public auth: AuthService, private clientService: ClientService){
 
@@ -20,6 +22,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(){
+    
+    window.addEventListener('beforeinstallprompt', event => {
+      this.promptEvent = event;
+    });
 
 
     this.getAssociatedClients()
@@ -27,6 +33,11 @@ export class AppComponent implements OnInit {
 
 
 
+  }
+
+
+  installPwa(): void {
+    this.auth.promptEvent.prompt();
   }
 
   getAssociatedClients() {

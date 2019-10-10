@@ -24,7 +24,7 @@ export class AuthService {
     public currentClient = this.currentUserSubject.asObservable();
     isLogged: boolean = false;
     loading: boolean = false;
-
+    promptEvent;
 
   
 
@@ -54,6 +54,8 @@ export class AuthService {
       console.log('updating to new version');
       this.updates.activateUpdate().then(() => document.location.reload()); 
     }
+
+
 
      private eventAuthError = new BehaviorSubject<string>("");
      eventAuthErrors$ = this.eventAuthError.asObservable();
