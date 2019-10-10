@@ -10,6 +10,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { reject } from 'q';
+import { SwUpdate } from '@angular/service-worker';
+
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -23,18 +25,35 @@ export class AuthService {
     isLogged: boolean = false;
     loading: boolean = false;
 
+
+  
+
+
+
     constructor(
       private http: HttpClient,
       public db: AngularFirestore,
       public afAuth: AngularFireAuth,
-      private router: Router) {
-        //this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
-        //this.currentUser = this.currentUserSubject.asObservable();
+      private router: Router,
+      public updates: SwUpdate
+    
+      ) {
 
-      
+        if (updates.isEnabled) {
+          updates.available.subscribe(() => updates.checkForUpdate()
+            .then(() => console.log('checking for updates')));
+        }
 
-      //this.items = db.list('items').valueChanges();
      }
+
+     public checkForUpdates(): void {
+      this.updates.available.subscribe(event => this.promptUser());
+    }
+  
+    private promptUser(): void {
+      console.log('updating to new version');
+      this.updates.activateUpdate().then(() => document.location.reload()); 
+    }
 
      private eventAuthError = new BehaviorSubject<string>("");
      eventAuthErrors$ = this.eventAuthError.asObservable();
