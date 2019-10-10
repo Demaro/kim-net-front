@@ -1,4 +1,5 @@
 
+
     <!--Navbar-->
     <mat-toolbar class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
       <div class="container">
@@ -72,3 +73,9 @@
     <router-outlet></router-outlet>
     <!-- Full Page Intro -->
 
+
+    <button  
+    mat-raised-button 
+    color="primary" 
+    (click)="addToHomeScreen()" 
+    *ngIf="showButton">Agregar a mi pantalla de inicio.</button>
