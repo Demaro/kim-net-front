@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Client } from '../models/client';
 import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+
 
 
 @Injectable({ providedIn: 'root' })
@@ -28,7 +30,8 @@ export class ClientService {
 
   getNamePerson(rut){
 
-    //return this.http.post('https://siichile.herokuapp.com/consulta/', { rut: '18.377.699-1'})
+    return this.http.get<Client>('https://siichile.herokuapp.com/consulta?rut=' + rut)
+
     
 
   }

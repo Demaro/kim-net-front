@@ -38,6 +38,8 @@ export class AddClientComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  client: Client;
+
 
 
 
@@ -65,15 +67,35 @@ export class AddClientComponent implements OnInit {
   getMesaggeErrorEmail(){
     return this.f.email.hasError('required')? 'Email es obligatorio' : this.f.email.hasError('pattern')? 'Email invalido' : ''
   }
+  capitalize(s) {
+      if (typeof s !== 'string') return ''
+      return s.charAt(0).toUpperCase() + s.slice(1)
+
+  }
+
 
   addNewClient() {
 
-    let field = this.clientForm.value;
+    let field = this.clientForm.controls;
     
+    
+    console.log('form ', field.name.value)
 
-    let newClient: Client = {id:2, fullName: field.name, email: field.email, phoneNumber: field.phoneNumber, product: field.product, birthdate: field.birthdate}
+    let first = field.name.value.split(' ')[0];
+    let last = field.name.value.split(' ')[2];
+    let last2 = field.name.value.split(' ')[3];
+
+    let firstCap = this.capitalize(first);
+
+    let lastCap = this.capitalize(last);
+
+    let last2Cap = this.capitalize(last2);
+
+    let newClient: Client = {id:2, fullName: field.name.value, firstName: firstCap, lastName: lastCap, lastName2: last2Cap, email: field.email.value, phoneNumber: field.phoneNumber.value, product: field.product.value, birthdate: field.birthdate.value}
 
     this.clientService.addData(newClient);
+
+
 
 
 
@@ -90,11 +112,34 @@ export class AddClientComponent implements OnInit {
 
     console.log('rut :', field.rut, 'nº :', field.rut.length)
 
+    
+
     if(field.rut.length === 9 ){
 
-      console.log('nueve')
-      this.clientService.getNamePerson(field.rut)
-   
+      let rut =  String(field.rut);
+      console.log('nnew ', rut)
+
+      let dig = rut.slice(-1);
+
+      let notDig = rut.substring(0, rut.length - 1);
+
+
+      let finalRut = notDig + '-' + dig;
+
+      let fieldName = this.clientForm.get('name');
+    this.clientService.getNamePerson(finalRut)
+    .subscribe(data =>  {
+      console.log(data)
+
+      let name = data.razon_social;
+
+
+      fieldName.setValue(name.toLowerCase());
+      fieldName.disable();
+
+    } )
+
+    
     }
 
 

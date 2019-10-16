@@ -40,8 +40,7 @@ export class ClientComponent implements OnInit {
   constructor(
     public dialog: MatDialog, 
     public router: Router, 
-    public clientService: ClientService,
-    private datePipe: DatePipe) { }
+    public clientService: ClientService) { }
 
   ngOnInit() {
     this.openDialog()

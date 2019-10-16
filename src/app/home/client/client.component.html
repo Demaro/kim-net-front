@@ -28,7 +28,7 @@
                               </span>
                               
                               <span class="survey-name">
-                                  <mat-icon>person</mat-icon>   {{ client.fullName }}
+                                  <mat-icon>person</mat-icon>   {{ client.firstName }} {{ client.lastName }}
                               </span>
                               
 
@@ -109,31 +109,7 @@
 
                           
 
-                        <mat-list>
-                            <mat-list-item>
-                              <mat-icon>person</mat-icon> <p>{{ client.fullName }}</p> 
-                            </mat-list-item>
-                            <mat-divider></mat-divider>
-                            <mat-list-item>
-                              <mat-icon>phone</mat-icon> {{ client.phoneNumber }}
-                            </mat-list-item>
-                            <mat-divider></mat-divider>
-                            <mat-list-item>
-                              <mat-icon>email</mat-icon> {{ client.email }}
-                            </mat-list-item>
-                            <mat-divider></mat-divider>
-                            <mat-list-item>
-                                <mat-icon>calendar_today</mat-icon> {{ client.birthdate | date:'yyyy-MM-dd' }}
-                            </mat-list-item>
-                            <mat-divider></mat-divider>
-                            <mat-list-item>
-                                <mat-icon>whatshot</mat-icon> Ultima compra: {{ client.product.name }}
-                            </mat-list-item>
 
-
-                            <mat-divider></mat-divider>
-                               <mat-list-item></mat-list-item>
-                          </mat-list>
 
 
 
