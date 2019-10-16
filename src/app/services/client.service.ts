@@ -28,7 +28,7 @@ export class ClientService {
 
   getNamePerson(rut){
 
-    return this.http.post('https://siichile.herokuapp.com/consulta/', { rut: '18.377.699-1'})
+    //return this.http.post('https://siichile.herokuapp.com/consulta/', { rut: '18.377.699-1'})
     
 
   }

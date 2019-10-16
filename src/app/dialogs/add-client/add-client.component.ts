@@ -94,9 +94,7 @@ export class AddClientComponent implements OnInit {
 
       console.log('nueve')
       this.clientService.getNamePerson(field.rut)
-      .subscribe( data => {
-        console.log(data)
-      })
+   
     }
 
 
