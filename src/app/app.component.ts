@@ -1,5 +1,8 @@
+
+
 import { Component, OnInit } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent , HttpClient} from '@angular/common/http';
+
+
 
 import { AuthService } from './services/auth.service';
 import { ClientService } from './services/client.service';
@@ -8,15 +11,19 @@ import {  Client } from './models/client';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+
 })
 export class AppComponent implements OnInit {
   title = 'kim-gas';
 
   promptEvent;
+  birth = new Date();
 
 
   constructor(public auth: AuthService, private clientService: ClientService){
+
+    
 
    this.auth.checkForUpdates();
   }
@@ -42,12 +49,24 @@ export class AppComponent implements OnInit {
 
   getAssociatedClients() {
 
-    let client:Client = {id: 1, fullName: 'David Martinez Rojas', email: 'demaromail@gmail.com', phoneNumber: 12312331 , product: {id:1, name: '5K'}};
+    let clientStorage = JSON.parse(sessionStorage.getItem('clients'));
 
-    this.clientService.addData(client);
+    if(clientStorage) {
+
+      console.log('storage: ',clientStorage)
+      clientStorage.forEach(client => {
+        this.clientService.addData(client)
+      });
+      
+    }
+
+
+
+   // this.clientService.addData(client);
+
+  
 
     console.log(this.clientService.currentClientSubject);
-
   }
 }
 

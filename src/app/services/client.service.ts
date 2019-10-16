@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Client } from '../models/client';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({ providedIn: 'root' })
 export class ClientService {
@@ -8,7 +10,7 @@ export class ClientService {
   public currentClientSubject: BehaviorSubject<Array<Client>> = new BehaviorSubject([]);
   public currentClient = this.currentClientSubject.asObservable();
 
-  constructor(
+  constructor(private http: HttpClient
     ) { 
     }
 
@@ -21,6 +23,14 @@ export class ClientService {
       const currentValue = this.currentClientSubject.value;
       const updatedValue = [...currentValue, dataObj];
       this.currentClientSubject.next(updatedValue);
+      
+  }
+
+  getNamePerson(rut){
+
+    return this.http.post('https://siichile.herokuapp.com/consulta/', { rut: '18.377.699-1'})
+    
+
   }
 
 }

@@ -19,14 +19,127 @@
                 
                     <mat-card class="cards-group " matRipple>
 
-                            <h6 class="mb-3"> <mat-icon>person</mat-icon> {{ client.fullName }}</h6>
 
-                            <h6 class="mb-3"> <mat-icon>phone</mat-icon> {{ client.phoneNumber }}</h6>
+                        <ul class="surveys grid">
+                            <li class="survey-item">
+                              
+                              <span class="survey-country list-only">
+                                 Client
+                              </span>
+                              
+                              <span class="survey-name">
+                                  <mat-icon>person</mat-icon>   {{ client.fullName }}
+                              </span>
+                              
 
-                            <h6 class="mb-3"> <mat-icon>email</mat-icon> {{ client.email }}</h6>
+                              <span class="survey-country grid-only">
+                                  <mat-icon>phone</mat-icon> {{ client.phoneNumber }}
+                               </span>
+                               <br>
+                               <span class="survey-country grid-only">
+                                  <mat-icon>calendar_today</mat-icon> {{ client.birthdate | date:'yyyy-MM-dd' }}
+                               </span>
+                               <br>
+                                 <span class="survey-country grid-only">
+                                  <mat-icon>email</mat-icon> {{ client.email }}
+                              </span>
+                               
 
-                            <h6 class="mb-3"> <mat-icon>whatshot</mat-icon> Ultima compra: {{ client.product.name }}</h6>
+                              <div class="pull-right">
+                                
+                                <span class="survey-progress">
 
+                                  
+                                  <span class="survey-progress-labels">
+                           
+                          
+            
+
+                                          <span class="btn-card">
+
+                                              <span class="survey-completes">
+                                                  <button  mat-icon-button>
+                                                      <mat-icon>edit</mat-icon>
+                                                    </button>
+                                              <button  mat-icon-button>
+                                                  <mat-icon>delete</mat-icon>
+                                                </button>
+
+                                              </span>
+                                      
+
+                                    </span>
+                                  </span>
+                                </span>
+                                
+                     
+                               <span class="survey-end-date ended">
+                                  <mat-icon>whatshot</mat-icon> Ultima compra: {{ client.product.name }}
+                              
+
+                            
+
+
+                                </span>
+                                  <br>
+                                <span class="survey-end-date ended">
+                                    <mat-icon>perm_identity</mat-icon> Vendedor: Gon Freecss
+                                
+  
+                              
+  
+  
+                                  </span>
+                          
+
+                             
+            
+                              
+                                <span class="survey-stage">
+                                  <span class="stage draft">Draft</span>
+                                  <span class="stage awarded">Awarded</span>
+                                  <span class="stage live">Live</span>
+                                  <span class="stage ended active">Ended</span>        
+                                </span>
+                              </div>
+                            </li>
+                          
+                          
+                          </ul>  
+
+                          
+
+                        <mat-list>
+                            <mat-list-item>
+                              <mat-icon>person</mat-icon> <p>{{ client.fullName }}</p> 
+                            </mat-list-item>
+                            <mat-divider></mat-divider>
+                            <mat-list-item>
+                              <mat-icon>phone</mat-icon> {{ client.phoneNumber }}
+                            </mat-list-item>
+                            <mat-divider></mat-divider>
+                            <mat-list-item>
+                              <mat-icon>email</mat-icon> {{ client.email }}
+                            </mat-list-item>
+                            <mat-divider></mat-divider>
+                            <mat-list-item>
+                                <mat-icon>calendar_today</mat-icon> {{ client.birthdate | date:'yyyy-MM-dd' }}
+                            </mat-list-item>
+                            <mat-divider></mat-divider>
+                            <mat-list-item>
+                                <mat-icon>whatshot</mat-icon> Ultima compra: {{ client.product.name }}
+                            </mat-list-item>
+
+
+                            <mat-divider></mat-divider>
+                               <mat-list-item></mat-list-item>
+                          </mat-list>
+
+
+
+
+
+                 
                     </mat-card>
                 
 

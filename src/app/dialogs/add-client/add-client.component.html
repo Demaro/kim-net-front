@@ -8,7 +8,7 @@
 
             <mat-form-field class="example-full-width">
                 <span matPrefix> <i class="fa fa-user prefix grey-text"></i> &nbsp;</span>
-                <input matInput type="tel" validateRut formatRut formControlName="rut" placeholder="Rut" required>
+                <input matInput type="tel" validateRut formatRut formControlName="rut" placeholder="Rut"  (ngModelChange)="getNamePerson()" required>
                 <mat-error>
                     {{ getMesaggeErrorRut()}}
                 </mat-error>
@@ -19,6 +19,15 @@
 
                 <input matInput formControlName="name" type="text" placeholder="Nombre completo">
             </mat-form-field>
+
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <input matInput [matDatepicker]="picker" formControlName="birthdate" maxlength="9" type="text" placeholder="Fecha Nacimiento">
+                <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker   #picker></mat-datepicker>
+            </mat-form-field>
+
 
             <br>
             <mat-form-field class="example-full-width">

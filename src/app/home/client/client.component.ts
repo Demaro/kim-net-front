@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ClientService } from '../../services/client.service';
 import { Client } from '../../models/client';
 import { trigger, state, animate, transition, style } from '@angular/animations';
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-client',
@@ -29,18 +30,22 @@ import { trigger, state, animate, transition, style } from '@angular/animations'
     ]),
 
   ],
+  providers: [DatePipe]
   
 })
 
 
 export class ClientComponent implements OnInit {
 
-  constructor(public dialog: MatDialog, public router: Router, public clientService: ClientService) { }
+  constructor(
+    public dialog: MatDialog, 
+    public router: Router, 
+    public clientService: ClientService,
+    private datePipe: DatePipe) { }
 
   ngOnInit() {
     this.openDialog()
 
-    
 
   }
 

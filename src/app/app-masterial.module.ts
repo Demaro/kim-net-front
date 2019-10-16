@@ -1,6 +1,7 @@
 import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MAT_DATE_LOCALE} from '@angular/material';
 
 import {
   MatInputModule,
@@ -14,7 +15,11 @@ import {
   MatProgressSpinnerModule,
   MatProgressBarModule,
   MatDialogModule,
-  MatMenuModule
+  MatMenuModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatDividerModule,
+  MatListModule
   
   
 } from '@angular/material';
@@ -34,6 +39,10 @@ import {
     MatProgressBarModule,
     MatDialogModule,
     MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDividerModule,
+    MatListModule
     
   ],
   exports: [
@@ -48,8 +57,13 @@ import {
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatDialogModule,
-    MatMenuModule
-  ]
+    MatMenuModule,
+    MatDatepickerModule,
+    MatDividerModule,
+    MatListModule
+  ],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }]
+
 })
 
 export class AppMaterialModule { }

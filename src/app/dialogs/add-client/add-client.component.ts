@@ -46,6 +46,7 @@ export class AddClientComponent implements OnInit {
     this.clientForm = this.formBuilder.group({
       rut: ['', [Validators.required, this.rutValidator]],
       name: ['', Validators.required],
+      birthdate: ['', Validators.required],
       phoneNumber: ['', Validators.required],
       email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       product: ['']
@@ -70,9 +71,33 @@ export class AddClientComponent implements OnInit {
     let field = this.clientForm.value;
     
 
-    let newClient: Client = {id:2, fullName: field.name, email: field.email, phoneNumber: field.phoneNumber, product: field.product}
+    let newClient: Client = {id:2, fullName: field.name, email: field.email, phoneNumber: field.phoneNumber, product: field.product, birthdate: field.birthdate}
 
     this.clientService.addData(newClient);
+
+
+
+
+
+  }
+
+
+  getNamePerson(){
+
+   
+
+    let field = this.clientForm.value;
+
+    console.log('rut :', field.rut, 'nº :', field.rut.length)
+
+    if(field.rut.length === 9 ){
+
+      console.log('nueve')
+      this.clientService.getNamePerson(field.rut)
+      .subscribe( data => {
+        console.log(data)
+      })
+    }
 
 
   }

@@ -6,5 +6,6 @@ export class Client {
     lastName?: string;
     authdata?: string;
     phoneNumber: number;
+    birthdate: Date;
     product: {id: number, name: string}
 }
